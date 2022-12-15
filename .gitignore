@@ -20,13 +20,16 @@
 *.data
 *.json
 *.cfg
+
 !setup.cfg
 !cfg/yolov3*.cfg
 
 storage.googleapis.com
 runs/*
 data/*
+**/datasets/**
 data/images/*
+**/halimeda/**
 !data/*.yaml
 !data/hyps
 !data/scripts
