@@ -1,0 +1,15 @@
+To install the enviroment install:
+
+comment all torch related requirements from requirements.txt, conda env with python 3.8
+
+install torch:
+conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=10.2 -c pytorch
+
+Then install requirements:
+pip install -r requirements.txt
+
+
+Checks: 
+
+Ensure pytorch finds GPU and that training does not produce nans. CUDA 11.x produces nans for some reason.
+Ensure that training uses GPU.

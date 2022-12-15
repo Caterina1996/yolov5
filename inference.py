@@ -21,21 +21,24 @@ import torch
 from PIL import ImageGrab
 import glob
 
-path_to_images="/home/uib/yolov5/datasets/halimeda/images/train/*"
+# path_to_images="/home/uib/yolov5/datasets/halimeda/images/val/*"
 
-path_to_model="/home/uib/yolov5/projects/halimeda/runs/exp4/weights"
+path_to_images="/home/uib/yolov5/datasets/halimeda/images/segmentation_exemples/*"
+
+path_to_model="/home/uib/yolov5/projects/halimeda/runs/exp/weights"
 
 images=glob.glob(path_to_images)
 
 model = torch.hub.load('ultralytics/yolov5', 'custom', path=path_to_model+'/best.pt')
-
+print(images)
+print(len(images))
 
 # crops = results.crop(save=True)  # cropped detections dictionary
 for img in images:
     results = model(img)  # inference
 
-    results.save("/home/uib/yolov5/projects/halimeda/runs/exp4/results/")
-
+    # results.save("/home/uib/yolov5/projects/halimeda/runs/exp4/results/")
+    results.show()
 # im1 = Image.open('zidane.jpg')  # PIL image
 # im2 = cv2.imread('bus.jpg')[..., ::-1]  # OpenCV image (BGR to RGB)
 

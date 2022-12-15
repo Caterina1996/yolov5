@@ -13,6 +13,14 @@ Usage - Multi-GPU DDP training:
 Models:     https://github.com/ultralytics/yolov5/tree/master/models
 Datasets:   https://github.com/ultralytics/yolov5/tree/master/data
 Tutorial:   https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data
+
+
+
+python train.py --img 800 --batch 16 --epochs 50 --data halimeda.yaml --weights yolov5n.pt --project /home/uib/yolov5/projects/halimeda/runs --patience 5
+
+python train.py --img 800 --batch 16 --epochs 60 --data halimeda.yaml --weights yolov5s.pt --project /home/uib/yolov5/projects/halimeda/runs --patience 10
+
+
 """
 
 import argparse
