@@ -1,4 +1,4 @@
-weights: yolov5n.pt
+weights: yolov5s.pt
 cfg: ''
 data: /home/uib/yolov5/data/halimeda.yaml
 hyp:
@@ -30,9 +30,9 @@ hyp:
   mosaic: 1.0
   mixup: 0.0
   copy_paste: 0.0
-epochs: 3
-batch_size: 16
-imgsz: 640
+epochs: 50
+batch_size: 8
+imgsz: 800
 rect: false
 resume: false
 nosave: false
@@ -45,7 +45,7 @@ cache: null
 image_weights: false
 device: ''
 multi_scale: false
-single_cls: false
+single_cls: true
 optimizer: SGD
 sync_bn: false
 workers: 8
@@ -55,7 +55,7 @@ exist_ok: false
 quad: false
 cos_lr: false
 label_smoothing: 0.0
-patience: 100
+patience: 5
 freeze:
 - 0
 save_period: -1
