@@ -18,7 +18,10 @@ Tutorial:   https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data
 
 python train.py --img 800 --batch 16 --epochs 50 --data halimeda.yaml --weights yolov5s.pt --project /home/uib/yolov5/projects/halimeda/runs --patience 5 ----single-cls
 
-python train.py --img 800 --batch 16 --epochs 60 --data halimeda.yaml --weights yolov5s.pt --project /home/uib/yolov5/projects/halimeda/runs --patience 10
+python train.py --img 800 --batch 16 --epochs 100 --data halimeda.yaml --weights yolov5l.pt --project /mnt/c/Users/tintin/yolov5/projects/halimeda/yolo_large/ --name new_hyper --patience 20 --single-cls
+
+
+python train.py --img 800 --batch 16 --epochs 100 --data halimeda.yaml --weights yolov5n.pt  --patience 20
 
 
 """

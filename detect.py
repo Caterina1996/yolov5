@@ -26,6 +26,17 @@ Usage - formats:
                                  yolov5s.tflite             # TensorFlow Lite
                                  yolov5s_edgetpu.tflite     # TensorFlow Edge TPU
                                  yolov5s_paddle_model       # PaddlePaddle
+
+
+
+python detect.py --weights /mnt/c/Users/tinti/yolov5/projects/halimeda/yolo_medium/exp/weights/best.pt --project /mnt/c/Users/tinti/yolov5/projects/halimeda/yolo_medium/  --name results/ --data data/halimeda.yaml --source /mnt/c/Users/tinti/yolov5/datasets/halimeda/images/val
+
+python detect.py --weights /mnt/c/Users/tintin/yolov5/projects/halimeda/yolo_large/new_hyper/weights/best.pt --project /mnt/c/Users/tintin/yolov5/projects/halimeda/yolo_large/  --name results/new_hyper --data data/halimeda.yaml --source /mnt/c/Users/tintin/yolov5/datasets/halimeda/images/val
+
+
+
+
+
 """
 
 import argparse
@@ -239,7 +250,7 @@ def parse_opt():
     parser.add_argument('--project', default=ROOT / 'runs/detect', help='save results to project/name')
     parser.add_argument('--name', default='exp', help='save results to project/name')
     parser.add_argument('--exist-ok', action='store_true', help='existing project/name ok, do not increment')
-    parser.add_argument('--line-thickness', default=3, type=int, help='bounding box thickness (pixels)')
+    parser.add_argument('--line-thickness', default=1, type=int, help='bounding box thickness (pixels)')
     parser.add_argument('--hide-labels', default=False, action='store_true', help='hide labels')
     parser.add_argument('--hide-conf', default=False, action='store_true', help='hide confidences')
     parser.add_argument('--half', action='store_true', help='use FP16 half-precision inference')
