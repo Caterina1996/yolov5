@@ -18,10 +18,33 @@ Tutorial:   https://github.com/ultralytics/yolov5/wiki/Train-Custom-Data
 
 python train.py --img 800 --batch 16 --epochs 50 --data halimeda.yaml --weights yolov5s.pt --project /home/uib/yolov5/projects/halimeda/runs --patience 5 ----single-cls
 
-python train.py --img 800 --batch 16 --epochs 100 --data halimeda.yaml --weights yolov5l.pt --project /mnt/c/Users/tintin/yolov5/projects/halimeda/yolo_large/ --name new_hyper --patience 20 --single-cls
+python train.py --img 800 --batch 16 --epochs 100 --data halimeda.yaml --weights yolov5l.pt --project /mnt/c/Users/haddock/yolov5/projects/halimeda/yolo_large/ --name new_hyper --patience 20 --single-cls
+python train.py --img 800 --batch 16 --epochs 100 --data halimeda.yaml --weights yolov5l.pt --project /mnt/c/Users/haddock/yolov5/projects/halimeda/yolo_large/ --name new_hyper --patience 20 --single-cls
 
+python train.py --img 800 --batch 16 --epochs 100 --data halimeda.yaml --weights yolov5s.pt --project /mnt/c/Users/haddo/yolov5/projects/halimeda/yolo_large/ --patience 20 --single-cls
+
+
+python train.py --batch 64 --cfg yolov5n6.yaml --weights '' --data coco.yaml --img 640 --epochs 300 --linear
 
 python train.py --img 800 --batch 16 --epochs 100 --data halimeda.yaml --weights yolov5n.pt  --patience 20
+
+
+python train.py --img 1200 --batch 8 --epochs 200 --data halimeda.yaml --weights yolov5x.pt  \
+                --project /mnt/c/Users/haddo/yolov5/projects/halimeda/yolo_XL/ --name hyp_low --patience 50 \
+                --single-cls 
+
+python train.py --img 1200 --batch 8 --epochs 200 --data halimeda.yaml --weights yolov5x.pt  \
+                --project /mnt/c/Users/haddo/yolov5/projects/halimeda/yolo_XL/ --name hyp_med  \
+                --single-cls --hyp data/hyps/hyp.scratch-med.yaml
+
+
+python train.py --img 1200 --batch 8 --epochs 200 --data halimeda.yaml --weights yolov5x.pt  \
+                --project /mnt/c/Users/haddo/yolov5/projects/halimeda/yolo_XL/ --name hyp_high  \
+                --single-cls --hyp data/hyps/hyp.scratch-high.yaml --patience 0
+
+python train.py --img 1200 --batch 8 --epochs 200 --data halimeda.yaml --weights yolov5x.pt  \
+                --project /mnt/c/Users/haddo/yolov5/projects/halimeda/yolo_XL/ --name hyp_none  \
+                --single-cls --hyp data/hyps/hyp.scratch_none.yaml --patience 0
 
 
 """
