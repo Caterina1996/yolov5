@@ -32,7 +32,7 @@ temp_labels_val=input_labels_path+"temp_val"
 
 training_instruction="python train.py --img 1200 --batch 8 --epochs 200 --data halimeda.yaml --weights yolov5x.pt  \
                     --project /mnt/c/Users/haddo/yolov5/projects/halimeda/yolo_XL/k-fold_training --name {}  \
-                    --single-cls --hyp data/hyps/hyp.scratch-low.yaml "
+                    --single-cls --hyp data/hyps/hyp.scratch-low.yaml --save-period 10 "
 
 inference_instruction="python detect.py --weights /mnt/c/Users/haddo/yolov5/projects/halimeda/yolo_XL/k-fold_training/{}/weights/best.pt \
                     --project /mnt/c/Users/haddo/yolov5/projects/halimeda/yolo_XL/k-fold_training/{}/  --name inference_web/ --data data/halimeda.yaml \
@@ -70,7 +70,7 @@ for i in range(1,k+1):
             #copy images
             for img in glob.glob(input_imgs_path+folds_dir+"/"+str(f)+"/*"):
                 shutil.copyfile(img, temp_imgs_val+"/"+img.split("/")[-1])
-                val_files_list.append(img)
+                # val_files_list.append(img)
             #copy labels
             for img in glob.glob(input_labels_path+folds_dir+"/"+str(f)+"/*"):
                 shutil.copyfile(img, temp_labels_val+"/"+img.split("/")[-1])
@@ -79,17 +79,17 @@ for i in range(1,k+1):
             #copy files to train partition        
             for img in glob.glob(input_imgs_path+folds_dir+"/"+str(f)+"/*"):
                 shutil.copyfile(img, temp_imgs_train+"/"+img.split("/")[-1])
-                train_files_list.append(img)
+                # train_files_list.append(img)
             #copy labels
             for img in glob.glob(input_labels_path+folds_dir+"/"+str(f)+"/*"):
                 shutil.copyfile(img, temp_labels_train+"/"+img.split("/")[-1])
 
-    print("train Files list len",len(train_files_list))
-    print("val Files list len",len(val_files_list))
-    train_files_list.extend(val_files_list)
-    print("Files list set len",len(set(train_files_list)))
-    val_files_list=[]
-    train_files_list=[]
+    # print("train Files list len",len(train_files_list))
+    # print("val Files list len",len(val_files_list))
+    # train_files_list.extend(val_files_list)
+    # print("Files list set len",len(set(train_files_list)))
+    # val_files_list=[]
+    # train_files_list=[]
 
     
     # 2 Train and eval (eval comming with train):

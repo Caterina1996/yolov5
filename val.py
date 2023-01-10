@@ -5,6 +5,8 @@ Validate a trained YOLOv5 detection model on a detection dataset
 Usage:
     $ python val.py --weights yolov5s.pt --data coco128.yaml --img 640
 
+    python val.py --task test --weights --weights /mnt/c/Users/haddo/yolov5/projects/halimeda/yolo_XL/hyp_low/weights/best.pt --project /mnt/c/Users/haddo/yolov5/projects/halimeda/yolo_XL/hyp_low/  --name val/  --data halimeda.yaml --img 1200
+
 Usage - formats:
     $ python val.py --weights yolov5s.pt                 # PyTorch
                               yolov5s.torchscript        # TorchScript
@@ -112,7 +114,7 @@ def run(
         save_txt=False,  # save results to *.txt
         save_hybrid=False,  # save label+prediction hybrid results to *.txt
         save_conf=False,  # save confidences in --save-txt labels
-        save_json=False,  # save a COCO-JSON results file
+        save_json=True,  # save a COCO-JSON results file
         project=ROOT / 'runs/val',  # save to project/name
         name='exp',  # save to project/name
         exist_ok=False,  # existing project/name ok, do not increment

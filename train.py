@@ -42,9 +42,9 @@ python train.py --img 1200 --batch 8 --epochs 200 --data halimeda.yaml --weights
                 --project /mnt/c/Users/haddo/yolov5/projects/halimeda/yolo_XL/ --name hyp_high  \
                 --single-cls --hyp data/hyps/hyp.scratch-high.yaml --patience 0
 
-python train.py --img 1200 --batch 8 --epochs 200 --data halimeda.yaml --weights yolov5x.pt  \
-                --project /mnt/c/Users/haddo/yolov5/projects/halimeda/yolo_XL/ --name hyp_none  \
-                --single-cls --hyp data/hyps/hyp.scratch_none.yaml --patience 0
+python train.py --img 1200 --batch 8 --epochs 200 --data halimeda.yaml --weights yolov5x6.pt  \
+                --project /mnt/c/Users/haddo/yolov5/projects/halimeda/yolo_X6/ --name hyp_high  \
+                --single-cls --hyp data/hyps/hyp.scratch-high.yaml --patience 50
 
 
 """
