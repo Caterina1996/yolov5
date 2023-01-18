@@ -31,7 +31,11 @@ Usage - formats:
 
 python detect.py --weights /mnt/c/Users/tinti/yolov5/projects/halimeda/yolo_medium/exp/weights/best.pt --project /mnt/c/Users/tinti/yolov5/projects/halimeda/yolo_medium/  --name results/ --data data/halimeda.yaml --source /mnt/c/Users/tinti/yolov5/datasets/halimeda/images/val
 
-python detect.py --weights /mnt/c/Users/tintin/yolov5/projects/halimeda/yolo_large/new_hyper/weights/best.pt --project /mnt/c/Users/tintin/yolov5/projects/halimeda/yolo_large/  --name results/new_hyper --data data/halimeda.yaml --source /mnt/c/Users/tintin/yolov5/datasets/halimeda/images/val
+python detect.py --weights /mnt/c/Users/haddo/yolov5/projects/halimeda/yolo_X6/hyp_high_2_lr2/weights/best.pt \
+    --project /mnt/c/Users/haddo/yolov5/projects/halimeda/yolo_X6/hyp_high_2_lr2 --name results_txts/ --data data/halimeda.yaml \
+    --source /mnt/c/Users/haddo/yolov5/datasets/halimeda/images/test --conf-thres 0.1 --iou-thres 0.5 \
+    --save-txt --save-conf --imgsz 1024 
+
 
 
 
@@ -174,7 +178,7 @@ def run(
                 for *xyxy, conf, cls in reversed(det):
                     if save_txt:  # Write to file
                         xywh = (xyxy2xywh(torch.tensor(xyxy).view(1, 4)) / gn).view(-1).tolist()  # normalized xywh
-                        line = (cls, *xywh, conf) if save_conf else (cls, *xywh)  # label format
+                        line = (cls, conf, *xywh) if save_conf else (cls, *xywh)  # label format
                         with open(f'{txt_path}.txt', 'a') as f:
                             f.write(('%g ' * len(line)).rstrip() % line + '\n')
 

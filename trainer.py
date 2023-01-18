@@ -18,7 +18,7 @@ import glob
 # )
 
 
-k=5 #num folds
+k=10 #num folds
 input_imgs_path="/mnt/c/Users/haddo/yolov5/datasets/halimeda/images/"
 input_labels_path="/mnt/c/Users/haddo/yolov5/datasets/halimeda/labels/"
 folds_dir="train_val_splits"
