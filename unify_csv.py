@@ -7,7 +7,12 @@ import sys
 from natsort import natsorted
 import pandas as pd
 
+"""
+Call example:
 
+python unify_csv.py --path_in projects/halimeda/k-fold_training/ --path_out projects/halimeda/k-fold_training/ --lookfor "results_pascalvoc"
+
+"""
 
 
 def main():
@@ -33,6 +38,7 @@ def main():
             if re.search("\.(csv)$", file[1]):    # csv
                 
                 if lookfor in file[1]:
+                    print("CSV FOUND!!")
 
                     columns_name_list = list()
 

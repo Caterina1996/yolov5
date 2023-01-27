@@ -7,6 +7,13 @@ import sys
 from natsort import natsorted
 import pandas as pd
 
+"""
+Call example:
+
+python unify_xlsx.py --path_in projects/halimeda/k-fold_training/ --path_out projects/halimeda/k-fold_training/ --lookfor "metrics_ss"
+
+"""
+
 def main():
 
     parser = argparse.ArgumentParser()
