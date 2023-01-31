@@ -10,7 +10,7 @@ import pandas as pd
 """
 Call example:
 
-python unify_csv.py --path_in projects/halimeda/k-fold_training/ --path_out projects/halimeda/k-fold_training/ --lookfor "results_pascalvoc"
+python unify_csv.py --path_in /mnt/c/Users/haddo/yolov5/projects/halimeda/final_trainings/yolo_XL --path_out /mnt/c/Users/haddo/yolov5/projects/halimeda/final_trainings/yolo_XL --lookfor "results_pascalvoc_2"
 
 """
 
@@ -60,7 +60,7 @@ def main():
 
     rows_data = np.vstack(rows_data_list)
     df = pd.DataFrame(data=rows_data, index=rows_name_list, columns=columns_name_list)
-    filepath = os.path.join(path_out, lookfor + "_unified.xlsx")
+    filepath = os.path.join(path_out, lookfor + "_unified_2.xlsx")
     df.to_excel(filepath, index=True)
 
 
