@@ -12,6 +12,8 @@ Call example:
 
 python unify_xlsx.py --path_in projects/halimeda/k-fold_training/ --path_out projects/halimeda/k-fold_training/ --lookfor "metrics_ss"
 
+python unify_xlsx.py --path_in projects/halimeda/k-fold_training/ --path_out projects/halimeda/k-fold_training/ --lookfor "metrics.xlsx"
+
 python unify_xlsx.py --path_in projects/halimeda/final_trainings/yolo_XL/ --path_out projects/halimeda/final_trainings/yolo_XL/  --lookfor "metrics.xlsx"
 
 """
@@ -38,11 +40,9 @@ def main():
 
             if re.search("\.(xlsx)$", file[1]):
                 
-                # if lookfor in file[1]:
-                print("file[1] is",file[1])
+                # if lookfor in file[1]: -> this was changed to avoid finding other files starting with metrics_
                 if lookfor == file[1]:
                     print("file is: ",file)
-
                     columns_name_list = list()
 
                     path_file = os.path.join(root, file[1])
@@ -66,7 +66,7 @@ def main():
 
     rows_data = np.vstack(rows_data_list)
     df = pd.DataFrame(data=rows_data, index=rows_name_list, columns=columns_name_list)
-    filepath = os.path.join(path_out, lookfor + "thr_unified.xlsx")
+    filepath = os.path.join(path_out,"metrics_thrsweep_unified.xlsx")
     df.to_excel(filepath, index=True)
 
 

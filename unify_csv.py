@@ -12,8 +12,9 @@ Call example:
 
 python unify_csv.py --path_in /mnt/c/Users/haddo/yolov5/projects/halimeda/final_trainings/yolo_XL --path_out /mnt/c/Users/haddo/yolov5/projects/halimeda/final_trainings/yolo_XL --lookfor "results_pascalvoc_2"
 
-"""
+python unify_csv.py --path_in /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training/ --path_out /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training/ --lookfor "results_pascalvoc"
 
+"""
 
 def main():
 
@@ -32,14 +33,13 @@ def main():
     rows_name_list = list()
 
     for root, dirs, files in os.walk(path_in):
-
         for file in enumerate(sorted(files)):     
 
             if re.search("\.(csv)$", file[1]):    # csv
-                
-                if lookfor in file[1]:
-                    print("CSV FOUND!!")
 
+                if lookfor in file[1]:
+                    print("CSV FOUND!!",file[1],"\n")
+                    
                     columns_name_list = list()
 
                     path_file = os.path.join(root, file[1])
@@ -60,7 +60,7 @@ def main():
 
     rows_data = np.vstack(rows_data_list)
     df = pd.DataFrame(data=rows_data, index=rows_name_list, columns=columns_name_list)
-    filepath = os.path.join(path_out, lookfor + "_unified_2.xlsx")
+    filepath = os.path.join(path_out, lookfor + "_unified_2.xlsx") # the 2 can be removed
     df.to_excel(filepath, index=True)
 
 
