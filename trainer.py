@@ -28,48 +28,41 @@ temp_labels_train=input_labels_path+"temp_train"
 temp_labels_val=input_labels_path+"temp_val"
 
 
-training_instruction="python train.py --img 1200 --batch 8 --epochs 200 --data halimeda_temp.yaml --weights yolov5x.pt  \
+training_instruction="python train.py --img 1024 --batch 8 --epochs 200 --data halimeda_temp.yaml --weights yolov5x.pt  \
                     --project /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2 --name {}  \
-                    --single-cls --hyp data/hyps/hyp.scratch-low.yaml --save-period 10 "
+                    --single-cls --hyp data/hyps/final/hyp.low27_da.yaml"
 
-# inference_instruction="python detect.py --weights /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training/{}/weights/best.pt \
-#                     --project /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training/{}/  --name inference_test_3/ --data data/halimeda_temp.yaml \
-#                     --source  /mnt/c/Users/haddo/yolov5/datasets/halimeda/kfold/images/test/  --save-txt --save-conf --conf-thres 0.03"
 
-# inference_instruction_SS="python detect.py --weights /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training/{}/weights/best.pt \
-#                     --project /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training/{}/  --name inference_SS_3/ --data data/halimeda_temp.yaml \
-#                     --source  /mnt/c/Users/haddo/yolov5/datasets/halimeda/segmentation/  --save-txt --save-conf --conf-thres 0.03"
-
-# pascalvoc_instruction="python /mnt/c/Users/haddo/object_detection_utils/metrics/pascalvoc.py \
-#                     -tiou 0.5 -tconf 0.1 -gtcoords rel -detcoords rel -imgsize 1024,1024 -gtformat=xywh -detformat=xywh \
-#                     -gt /mnt/c/Users/haddo/yolov5/datasets/halimeda/kfold/labels/test -det /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/inference_test/labels/ \
-#                     -np -sp /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/pascalvoc/"
-
-# coverage_instruction="python /mnt/c/Users/haddo/object_detection_utils/metrics/coverage.py --shape 1024 \
-#                     --path_txt /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/inference_test/labels/ \
-#                     --path_out /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/inference_test/coverage/ --grid 10 "
-
-#Corrected pipeline all predictions finding best thr:
-
-inference_instruction="python detect.py --weights /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training/{}/weights/best.pt \
-                    --project /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training/{}/  --name inference_test_2/ --data data/halimeda_temp.yaml \
+inference_instruction="python detect.py --weights /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/weights/best.pt \
+                    --project /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/  --name inference_test/ --data data/halimeda_temp.yaml \
                     --source  /mnt/c/Users/haddo/yolov5/datasets/halimeda/kfold/images/test/  --save-txt --save-conf --conf-thres 0.03 --line-thickness 1"
+
+inference_instruction="python detect.py --weights /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/weights/best.pt \
+                    --project /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/  --name inference_val/ --data data/halimeda_temp.yaml \
+                    --source  /mnt/c/Users/haddo/yolov5/datasets/halimeda/kfold/images/temp_val/  --save-txt --save-conf --conf-thres 0.03 --line-thickness 1"
+
+
+inference_instruction_SS="python detect.py --weights /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/weights/best.pt \
+                    --project /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/  --name inference_SS/ --data data/halimeda_temp.yaml \
+                    --source  /mnt/c/Users/haddo/yolov5/datasets/halimeda/segmentation/  --save-txt --save-conf --conf-thres 0.03 --line-thickness 1"
 
 
 pascalvoc_instruction="python /mnt/c/Users/haddo/object_detection_utils/metrics/pascalvoc.py \
                     -tiou 0.5 -tconf 0.1 -gtcoords rel -detcoords rel -imgsize 1024,1024 -gtformat=xywh -detformat=xywh \
-                    -gt /mnt/c/Users/haddo/yolov5/datasets/halimeda/kfold/labels/test -det /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training/{}/inference_test_2/labels/ \
-                    -np -sp /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training/{}/pascalvoc2/"
+                    -gt /mnt/c/Users/haddo/yolov5/datasets/halimeda/kfold/labels/test -det /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/inference_test/labels/ \
+                    -np -sp /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/pascalvoc/"
 
 
 coverage_instruction="python /mnt/c/Users/haddo/object_detection_utils/metrics/coverage.py --shape 1024 \
-                    --path_txt /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training/{}/inference_test_2/labels/ \
-                    --path_out /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training/{}/inference_test_2/coverage2/ --grid 10 "
+                    --path_txt /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/inference_test/labels/ \
+                    --path_out /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/inference_test/coverage/ --grid 10 "
+
+
 
 eval_ss2_instruction="python /mnt/c/Users/haddo/object_detection_utils/metrics/eval_ss2.py \
-                    --pred_path /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training/{}/inference_test_2/coverage2/ \
+                    --pred_path /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/inference_test/coverage/ \
                     --gt_im_path  /mnt/c/Users/haddo/yolov5/datasets/halimeda/coverage/test/ --gt_label_path /mnt/c/Users/haddo/yolov5/datasets/halimeda/kfold/labels/test \
-                    --run_name {} --save_path /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training/{}/inference_test_2 --shape 1024"
+                    --run_name {} --save_path /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/inference_test --shape 1024"
 
 
 
@@ -97,15 +90,17 @@ create_empty_temp_dirs()
 
 val_files_list=[]
 train_files_list=[]
-create_dirs=False
+create_dirs=True
 
 for i in range(1,k+1):
     #1) K folds:
-     
     #Copy all files to tmp train and tmp val
-    for f in range(1,k+1): 
-        if create_dirs:
+    if create_dirs:
+
+        for f in range(1,k+1): 
             if f==i:
+                print("copying val files")
+
                 #copy val_files
                 #copy images
                 print("PATH: ",input_imgs_path+folds_dir+"/"+str(f)+"/*")
@@ -119,6 +114,8 @@ for i in range(1,k+1):
                 
             else:
                 #copy files to train partition        
+                print("copying train files")
+
                 for img in glob.glob(input_imgs_path+folds_dir+"/"+str(f)+"/*"):
                     shutil.copyfile(img, temp_imgs_train+"/"+img.split("/")[-1])
                     train_files_list.append(img)
@@ -143,8 +140,8 @@ for i in range(1,k+1):
     os.system(I)
 
     # 3.1) Inference SS:
-    I=inference_instruction_SS.format(str(i),str(i)) 
-    os.system(I)
+    # I=inference_instruction_SS.format(str(i),str(i)) 
+    # os.system(I)
 
     # 4) Pascalvoc:
     P=pascalvoc_instruction.format(str(i),str(i)) 
@@ -163,6 +160,18 @@ for i in range(1,k+1):
 
 
 # ---------------------------------END----------------------------------------------
+
+# SS Inference:
+
+# i= 3
+
+# inference_instruction_SS="python detect.py --weights /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/weights/best.pt \
+#                     --project /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/  --name inference_SS_trainval/ --data data/halimeda_temp.yaml \
+#                     --source  /mnt/c/Users/haddo/yolov5/datasets/halimeda/segmentation/trainval  --save-txt --save-conf --conf-thres 0.03 --line-thickness 1"
+
+# I=inference_instruction_SS.format(str(i),str(i)) 
+# os.system(I)
+
 
 #Millor low_27_da:
 
@@ -189,3 +198,5 @@ for i in range(1,k+1):
 
 # except Exception as e:
 #     print("Oh no no no no no!!!!", e)
+
+
