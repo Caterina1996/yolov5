@@ -27,7 +27,7 @@
 storage.googleapis.com
 runs/*
 data/*
-**/datasets/**
+# **/datasets/**
 data/images/*
 **/halimeda/**
 !data/*.yaml
