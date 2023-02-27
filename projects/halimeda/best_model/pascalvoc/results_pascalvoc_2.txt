@@ -1,0 +1,17 @@
+Object Detection Metrics
+
+
+Class: 0
+N GTs: 306
+N DETs: 491
+TPs 231
+FPs 260
+FNs 75
+AP 63.27%
+
+
+mAP: 63.27%
+
+best conf_thr: 35
+recall: 61.76%
+precision: 74.12%
