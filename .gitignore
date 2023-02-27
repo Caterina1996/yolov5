@@ -1,14 +1,14 @@
 # Repo-specific GitIgnore ----------------------------------------------------------------------------------------------
-# *.jpg
-# *.jpeg
-# *.png
+*.jpg
+*.jpeg
+*.png
 *.bmp
 *.tif
 *.tiff
 *.heic
-# *.JPG
-# *.JPEG
-# *.PNG
+*.JPG
+*.JPEG
+*.PNG
 *.BMP
 *.TIF
 *.TIFF
@@ -29,7 +29,7 @@ runs/*
 data/*
 # **/datasets/**
 data/images/*
-# **/halimeda/**
+**/halimeda/**
 !data/*.yaml
 !data/hyps
 !data/scripts
