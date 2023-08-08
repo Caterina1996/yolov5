@@ -6,12 +6,11 @@ import glob
 """
 This code applies k-fold cross validation 
 
-Input: Dataset splitted in k folders(partitions)
+Input: Dataset splitted in k folders(partitions) -> DatasetSplitter
 For each fold the code trains with all folders data except one and uses the remaining one as validation
 It also does inference and calculates test metrics (pascalvoc and coverage) for best thr
 
 """
-
 
 #k-fold cross validation 
 # Before using call datasetSplitter
@@ -35,11 +34,7 @@ training_instruction="python train.py --img 1024 --batch 8 --epochs 200 --data h
 
 inference_instruction="python detect.py --weights /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/weights/best.pt \
                     --project /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/  --name inference_test/ --data data/halimeda_temp.yaml \
-                    --source  /mnt/c/Users/haddo/yolov5/datasets/halimeda/kfold/images/test/  --save-txt --save-conf --conf-thres 0.03 --line-thickness 1"
-
-inference_instruction="python detect.py --weights /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/weights/best.pt \
-                    --project /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/  --name inference_val/ --data data/halimeda_temp.yaml \
-                    --source  /mnt/c/Users/haddo/yolov5/datasets/halimeda/kfold/images/temp_val/  --save-txt --save-conf --conf-thres 0.03 --line-thickness 1"
+                    --source  /mnt/c/Users/haddo/yolov5/datasets/halimeda/kfold/images/test/  --save-txt --save-conf --conf-thres 0 --line-thickness 1"
 
 
 inference_instruction_SS="python detect.py --weights /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/weights/best.pt \
@@ -157,46 +152,5 @@ for i in range(1,k+1):
 
     # 7) Remove temporary directories and create new ones:
     create_empty_temp_dirs()
-
-
-# ---------------------------------END----------------------------------------------
-
-# SS Inference:
-
-# i= 3
-
-# inference_instruction_SS="python detect.py --weights /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/weights/best.pt \
-#                     --project /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/{}/  --name inference_SS_trainval/ --data data/halimeda_temp.yaml \
-#                     --source  /mnt/c/Users/haddo/yolov5/datasets/halimeda/segmentation/trainval  --save-txt --save-conf --conf-thres 0.03 --line-thickness 1"
-
-# I=inference_instruction_SS.format(str(i),str(i)) 
-# os.system(I)
-
-
-#Millor low_27_da:
-
-# The following code is just a temporary fix:
-# Missing evalss2 -> threshold sweep -> went wrong because of nans
-
-# missing_evals=["base_2","base_5","base_4","base_da_1","high3_da_2","high3_da_4","low27_1","low27_2","low27_3","low27_da_1","low3_4","low3_da_1","low3_da_2","low9_1","low9_3","low9_4"]
-
-# #Instruction:
-# command="python /mnt/c/Users/haddo/object_detection_utils/metrics/eval_ss2.py \
-#     --pred_path /mnt/c/Users/haddo/yolov5/projects/halimeda/final_trainings/yolo_XL/{}/inference_test_2/coverage2 \
-#     --gt_im_path  /mnt/c/Users/haddo/yolov5/datasets/halimeda/coverage/test/ \
-#     --gt_label_path /mnt/c/Users/haddo/yolov5/datasets/halimeda/hp/labels/test/ --run_name {} \
-#     --save_path /mnt/c/Users/haddo/yolov5/projects/halimeda/final_trainings/yolo_XL/{}/inference_test_2 --shape 1024"
-
-# try:
-#     for folder in missing_evals:
-#         instr=command.format(folder,folder,folder)
-#         os.system(instr)
-
-#     # unify csv:
-#     unify_csv="python unify_xlsx.py --path_in projects/halimeda/final_trainings/yolo_XL/ --path_out projects/halimeda/final_trainings/yolo_XL/  --lookfor metrics.xlsx"
-#     os.system(unify_csv)
-
-# except Exception as e:
-#     print("Oh no no no no no!!!!", e)
 
 

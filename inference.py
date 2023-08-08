@@ -1,53 +1,36 @@
 
 
-import argparse
-import math
-import os
-import random
-import sys
-import time
-from copy import deepcopy
-from datetime import datetime
-from pathlib import Path
-
-import numpy as np
 import torch
-import torch.distributed as dist
 import torch.nn as nn
-import yaml
-from torch.optim import lr_scheduler
-from tqdm import tqdm
-import torch
-from PIL import ImageGrab
+import torch.optim as optim
+import os
 import glob
-
+from skimage.io import imread
 # path_to_images="/home/uib/yolov5/datasets/halimeda/images/val/*"
 
-path_to_images="/home/uib/yolov5/datasets/halimeda/images/segmentation_exemples/*"
+path_to_images="/mnt/c/Users/haddo/INVHALI/dataset/OD/test/*"
 
-path_to_model="/home/uib/yolov5/projects/halimeda/runs/exp/weights"
+path_to_model="/mnt/c/Users/haddo/yolov5/projects/halimeda/yolo_nano/fold3_data/weights"
 
 images=glob.glob(path_to_images)
 
-model = torch.hub.load('ultralytics/yolov5', 'custom', path=path_to_model+'/best.pt')
-print(images)
-print(len(images))
 
-# crops = results.crop(save=True)  # cropped detections dictionary
+# Load model
+def load_model(path):
+    # model = torch.load(path_to_model)
+    #Alternativa:
+    model = torch.hub.load('ultralytics/yolov5', 'custom', path=path+'/best.pt')
+
+    #Això s'ha de fer abans de l'inferència per posar el model en mode inferencia(és pel dropout i batchnorm)
+    model.eval()
+    return model()
+
+
+OD_model=load_model(path_to_model)
+
 for img in images:
-    results = model(img)  # inference
-
+    im=imread(img)
+    results = OD_model(im)  # inference
+    print(results)
     # results.save("/home/uib/yolov5/projects/halimeda/runs/exp4/results/")
     results.show()
-# im1 = Image.open('zidane.jpg')  # PIL image
-# im2 = cv2.imread('bus.jpg')[..., ::-1]  # OpenCV image (BGR to RGB)
-
-# # Inference
-# results = model([im1, im2], size=640) # batch of images
-
-# # Results
-# results.print()
-# results.save()  # or .show()
-
-# results.xyxy[0]  # im1 predictions (tensor)
-# results.pandas().xyxy[0]  # im1 predictions (pandas)
