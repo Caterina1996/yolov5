@@ -1,14 +1,14 @@
 # Repo-specific GitIgnore ----------------------------------------------------------------------------------------------
-*.jpg
-*.jpeg
-*.png
+
+
+
 *.bmp
 *.tif
 *.tiff
 *.heic
-*.JPG
-*.JPEG
-*.PNG
+
+**/events.out.tfevents.**
+*.tfevents*
 *.BMP
 *.TIF
 *.TIFF
@@ -28,8 +28,7 @@ storage.googleapis.com
 runs/*
 data/*
 # **/datasets/**
-data/images/*
-**/halimeda/**
+
 !data/*.yaml
 !data/hyps
 !data/scripts
@@ -38,7 +37,7 @@ data/images/*
 !data/images/bus.jpg
 !data/*.sh
 
-results*.csv
+
 
 # Datasets -------------------------------------------------------------------------------------------------------------
 coco/
