@@ -1,0 +1,5 @@
+
+python detect.py --weights /mnt/c/Users/haddo/yolov5/projects/halimeda/k-fold_training_2/3/weights/best.pt \
+    --project /mnt/c/Users/haddo/yolov5/projects/halimeda/NEW_TEST --name inference_0/ --data data/halimeda.yaml \
+    --source /mnt/c/Users/haddo/yolov5/datasets/halimeda/NEW_TEST/best/images --conf-thres 0.01 --iou-thres 0.5 \
+    --save-txt --save-conf --imgsz 1024 
