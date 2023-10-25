@@ -27,7 +27,7 @@
 storage.googleapis.com
 runs/*
 data/*
-# **/datasets/**
+**/datasets/**
 **/old/**
 **/inference_video**
 !data/*.yaml
@@ -48,6 +48,7 @@ projects/halimeda/old/*
 coco/
 coco128/
 VOC/
+datasets/
 
 # MATLAB GitIgnore -----------------------------------------------------------------------------------------------------
 *.m~
