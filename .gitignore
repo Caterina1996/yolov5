@@ -28,7 +28,8 @@ storage.googleapis.com
 runs/*
 data/*
 # **/datasets/**
-
+**/old/**
+**/inference_video**
 !data/*.yaml
 !data/hyps
 !data/scripts
@@ -36,7 +37,11 @@ data/*
 !data/images/zidane.jpg
 !data/images/bus.jpg
 !data/*.sh
-
+*projects/halimeda/old/*
+**projects/halimeda/old/**
+projects/halimeda/old/
+projects/halimeda/old/*
+*projects/halimeda/old/*
 
 
 # Datasets -------------------------------------------------------------------------------------------------------------
