@@ -412,7 +412,7 @@ def train(hyp, opt, device, callbacks):  # hyp is path/to/hyp.yaml or hyp dictio
                     f1 = 2*(precision*recall)/(precision + recall)
                     logger.clearml.task.get_logger().report_scalar(
                         'F1-Score',
-                        f'F1{tipo}',
+                        f'F1({tipo})',
                         iteration=epoch,
                         value=f1
                     )
