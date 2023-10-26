@@ -382,6 +382,42 @@ def train(hyp, opt, device, callbacks):  # hyp is path/to/hyp.yaml or hyp dictio
             # callbacks.run('on_fit_epoch_end', log_vals, epoch, best_fitness, fi)
             # Log val metrics and media
             metrics_dict = dict(zip(KEYS, log_vals))
+            
+            #----------------ClearML Custom Log------------------------------------
+            for key, value in metrics_dict.items(): 
+                
+                if any(loss_name in key for loss_name in ('box_loss', 'seg_loss', 'obj_loss', 'cls_loss')):
+                    loss_type = key.split('/')[1]
+                    logger.clearml.task.get_logger().report_scalar(
+                        loss_type,
+                        key,
+                        iteration=epoch,
+                        value=value
+                    )
+                
+                elif 'metrics' in key: 
+                    metric_type = (key.split('/')[1]).split('(')[0]
+                    logger.clearml.task.get_logger().report_scalar(
+                        metric_type,
+                        key,
+                        iteration=epoch,
+                        value=value
+                    )
+
+            for tipo in ('B', 'M'): 
+                if f'metrics/precision({tipo})' in metrics_dict.keys() and f'metrics/recall({tipo})' in metrics_dict.keys():
+
+                    precision = metrics_dict[f'metrics/precision({tipo})']
+                    recall = metrics_dict[f'metrics/recall({tipo})']
+                    f1 = 2*(precision*recall)/(precision + recall)
+                    logger.clearml.task.get_logger().report_scalar(
+                        'F1-Score',
+                        f'F1{tipo}',
+                        iteration=epoch,
+                        value=f1
+                    )
+            # ---------------------------------------------------------------------
+
             logger.log_metrics(metrics_dict, epoch)
 
             # Save model

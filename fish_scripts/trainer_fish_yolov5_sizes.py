@@ -9,13 +9,13 @@ from natsort import natsorted
 import random
 import time
 
-path_to_calls="/mnt/c/Users/haddo/DL_stack/yolov5/projects/fish/"
-path_to_project = "/mnt/c/Users/haddo/DL_stack/yolov5/projects/fish/test_sizes"
-path_to_dataset = "/mnt/c/Users/haddo/DL_stack/yolov5/datasets/fish/PLOME_IS/"
+path_to_calls="/home/antonio/yolov5/projects/fish/"
+path_to_project = "/home/antonio/yolov5/projects/fish/test_sizes"
+path_to_dataset = "/home/antonio/yolov5/datasets/fish/PLOME_IS/"
 
 tmp_suffixes = ["images/temp_train/", "labels/temp_train", "images/temp_val", "labels/temp_val"]
 
-dataset_yaml = "/mnt/c/Users/haddo/yolov5/data/fish.yaml"
+dataset_yaml = "/home/antonio/yolov5/data/fish.yaml"
 
 def create_empty_temp_dirs(base_path):
     print("Base path is:", base_path)
@@ -155,15 +155,15 @@ if do_train:
                         output_uri=True # To upload the model and weights to ClearML.
                     )
                  
-                    instruction=f"python ../segment/train.py --img 640 --batch 8 --epochs 200 --data {dataset_yaml} --weights yolov5n-seg.pt --patience 20 \
-                    --project {project_name} --name {run_name} --seed 42 "
+                    instruction=f"python ../segment/train.py --img 640 --batch 8 --epochs 5 --data {dataset_yaml} --weights yolov5n-seg.pt --patience 20 \
+                    --project {project_name} --name {run_name} --seed 42"
 
                     # instruction="python ../segment/train.py --img 1024 --batch 8 --epochs 200 --data fish.yaml \
                     #     --weights yolov5n-seg.pt --patience 20  --project /mnt/c/Users/haddo/yolov5/projects/fish/test_sizes --name nano --seed=42"
                     
                     # model_size = 'x'
                     model_variant = f'YOLOv5{model_size}-seg'
-                    task.set_parameter('model_variant', model_variant)
+                    # task.set_parameter('model_variant', model_variant)
 
 
                     # train_args =  dict(
@@ -203,7 +203,7 @@ if do_train:
                     print(instruction)
                     # Use the formatted instructions
                     
-
+                    task.close()
                     time.sleep(300)
 
 
