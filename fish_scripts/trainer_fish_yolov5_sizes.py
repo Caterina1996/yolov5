@@ -9,13 +9,14 @@ from natsort import natsorted
 import random
 import time
 
-path_to_calls="/home/antonio/yolov5/projects/fish/"
-path_to_project = "/home/antonio/yolov5/projects/fish/test_sizes"
-path_to_dataset = "/home/antonio/yolov5/datasets/fish/PLOME_IS/"
+
+path_to_calls="/mnt/c/Users/haddo/DL_stack/yolov5/projects/fish/"
+path_to_project = "/mnt/c/Users/haddo/DL_stack/yolov5/projects/fish/test_sizes"
+path_to_dataset = "/mnt/c/Users/haddo/DL_stack/yolov5/datasets/fish/PLOME_IS/"
 
 tmp_suffixes = ["images/temp_train/", "labels/temp_train", "images/temp_val", "labels/temp_val"]
 
-dataset_yaml = "/home/antonio/yolov5/data/fish.yaml"
+dataset_yaml = "/mnt/c/Users/haddo/DL_stack/yolov5/data/fish.yaml"
 
 def create_empty_temp_dirs(base_path):
     print("Base path is:", base_path)
@@ -104,40 +105,39 @@ if do_train:
         "x": "extra_large"
     }
 
-    # configs=["/mnt/c/Users/haddo/yolov8/ultralytics/yolo/cfg/da.yaml"]
+
     # configs=["/mnt/c/Users/haddo/yolov8/ultralytics/yolo/cfg/da.yaml","/mnt/c/Users/haddo/yolov8/ultralytics/yolo/cfg/no_da.yaml"]
     batch_sizes=[8]
 
-    
     k = 5  # num folds
     for batch in batch_sizes:
         # Tidy train-val splits from k-fold
                 
         # create temp train and val (or empty them)
-        # create_empty_temp_dirs(path_to_dataset)
+        create_empty_temp_dirs(path_to_dataset)
 
         folds_images_path=path_to_dataset+"/images/folds/"
         folds_labels_path=path_to_dataset+"/labels/folds/"
         # create the k fold iteration (here to avoid doing it every time)
         # # k fold 
         for i in range(1, k+1):
-        #     for f in range(1, k+1):
-        #         if f == i:
-        #             print("copying val images from: ", folds_images_path + "/" + str(f) + "/ to /temp_val/")
-        #             print("copying val labels from: ", folds_labels_path + "/" + str(f) + "/ to /temp_val/")
-        #             for img, lbl in zip(glob.glob(folds_images_path + "/" + str(f) + "/*"), glob.glob(folds_labels_path + "/" + str(f) + "/*")):
-        #                 shutil.copyfile(img, path_to_dataset + "/images/temp_val/" + img.split("/")[-1])
-        #                 shutil.copyfile(lbl, path_to_dataset + "/labels/temp_val/" + lbl.split("/")[-1])
-        #         else:
-        #             print("copying val images from: ", folds_images_path + "/" + str(f) + "to /train/")
-        #             print("copying val labels from: ", folds_labels_path + "/" + str(f) + "to /train/")
+            for f in range(1, k+1):
+                if f == i:
+                    print("copying val images from: ", folds_images_path + "/" + str(f) + "/ to /temp_val/")
+                    print("copying val labels from: ", folds_labels_path + "/" + str(f) + "/ to /temp_val/")
+                    for img, lbl in zip(glob.glob(folds_images_path + "/" + str(f) + "/*"), glob.glob(folds_labels_path + "/" + str(f) + "/*")):
+                        shutil.copyfile(img, path_to_dataset + "/images/temp_val/" + img.split("/")[-1])
+                        shutil.copyfile(lbl, path_to_dataset + "/labels/temp_val/" + lbl.split("/")[-1])
+                else:
+                    print("copying val images from: ", folds_images_path + "/" + str(f) + "to /train/")
+                    print("copying val labels from: ", folds_labels_path + "/" + str(f) + "to /train/")
 
-        #             for img, lbl in zip(glob.glob(folds_images_path + "/" + str(f) + "/*"), glob.glob(folds_labels_path + "/" + str(f) + "/*")):
-        #                 shutil.copyfile(img, path_to_dataset + "/images/temp_train/" + img.split("/")[-1])
-        #                 shutil.copyfile(lbl, path_to_dataset + "/labels/temp_train/" + lbl.split("/")[-1])
+                    for img, lbl in zip(glob.glob(folds_images_path + "/" + str(f) + "/*"), glob.glob(folds_labels_path + "/" + str(f) + "/*")):
+                        shutil.copyfile(img, path_to_dataset + "/images/temp_train/" + img.split("/")[-1])
+                        shutil.copyfile(lbl, path_to_dataset + "/labels/temp_train/" + lbl.split("/")[-1])
 
             
-            # seed=random.randint(0,100)
+           
             for model_size in model_sizes.keys():
                 project_name=path_to_project+"/"+model_sizes[model_size] +"/"  
                 for lr in lrs:
@@ -155,17 +155,16 @@ if do_train:
                         output_uri=True # To upload the model and weights to ClearML.
                     )
                  
-                    instruction=f"python ../segment/train.py --img 640 --batch 8 --epochs 5 --data {dataset_yaml} --weights yolov5n-seg.pt --patience 20 \
+                    instruction=f"python ../segment/train.py --img 640 --batch 8 --epochs 300 --data {dataset_yaml} --weights yolov5{model_size}-seg.pt --patience 20 \
                     --project {project_name} --name {run_name} --seed 42"
 
                     # instruction="python ../segment/train.py --img 1024 --batch 8 --epochs 200 --data fish.yaml \
                     #     --weights yolov5n-seg.pt --patience 20  --project /mnt/c/Users/haddo/yolov5/projects/fish/test_sizes --name nano --seed=42"
                     
-                    # model_size = 'x'
+                   
                     model_variant = f'YOLOv5{model_size}-seg'
+
                     # task.set_parameter('model_variant', model_variant)
-
-
                     # train_args =  dict(
                     #     data=dataset_yaml,
                     #     optimizer="SGD",
@@ -176,27 +175,17 @@ if do_train:
                     #     name=run_name,
                     #     seed=42
                     # )
-
                     # task.connect(train_args)
-
-                    # task.connect_configuration(train_args['data'], 'Dataset yaml')
-
-
-                     
+                    # task.connect_configuration(train_args['data'], 'Dataset yaml')     
                     # task = Task.init(project_name='Peces', task_name=run_name)
                     # task.set_parameter('model_variant', model_sizes[model_size])
 
-                    
-                    # train_instruction = "yolo segment train data={} model={} epochs=300 imgsz=640 seed=42  lr0={} project={} name={} patience=20"
-                    # train_instruction_formatted=train_instruction.format(dataset_yaml,model_size,str(lr),project_name,run_name) 
-                    
-                    # val_instruction_formatted =val_instruction.format(dataset_yaml,os.path.join(project_name,run_name,"weights/"+"best.pt"),project_name,run_name+"/validation") 
-                    # test_instruction_formatted =test_instruction.format(dataset_yaml,os.path.join(project_name,run_name,"weights/"+"best.pt"),project_name,run_name+"/test") 
                     os.system(instruction)
 
                     with open(path_to_calls+'/calls_peces_paper.txt', 'a+') as f:
                         f.write(instruction)
                         # f.write(test_instruction_formatted)
+                        f.write("\n")
                         f.write("------------------------------------------------------------- \n")
                         f.write("\n")
 
@@ -206,9 +195,3 @@ if do_train:
                     task.close()
                     time.sleep(300)
 
-
-
-# path_to_project = "/mnt/c/Users/haddo/yolov8/peixos/"
-# path_to_dataset = "/mnt/c/Users/haddo/yolov8/datasets/PLOME_IS_ANTONIO/test_sizes"
-# dataset_yaml = path_to_dataset +  "/data.yaml"
-# train_instruction = "yolo segment train data= model={} epochs=200 imgsz=640 seed=42 project={} name={} seed=42"
