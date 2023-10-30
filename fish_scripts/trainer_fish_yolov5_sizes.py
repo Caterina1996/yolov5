@@ -74,16 +74,23 @@ for v in ds_versions:
             for sample in images[init_idx:final_idx]:
                 shutil.copyfile(sample, path_to_dataset+ "/images/folds/" + str(i) +"/"+ sample.split("/")[-1])
                 shutil.copyfile(train_val_data[sample], path_to_dataset+ "/labels/folds/" + str(i)+"/"+ train_val_data[sample].split("/")[-1])
-                check_imgs_array.extend(sample)
-                check_lbls_array.extend(train_val_data[sample],)
+                check_imgs_array.append(sample)
+                check_lbls_array.append(train_val_data[sample],)
 
             init_idx = final_idx
             final_idx = final_idx + int(len(images) / k) + 1
             if i == k - 1:
-                final_idx = len(images) - 1
+                final_idx = len(images)
 
 if len(set(list(check_imgs_array)))!=len(check_imgs_array) or len(set(list(check_lbls_array)))!=len(check_lbls_array):
+    print(set(list(check_imgs_array)))
+    print(set(list(check_lbls_array)))
     print("WARNING: SOMETHING HAS BEEN COPIED MORE THAN ONE TIMEEEE!!!!!!!!!!!!!!")
+
+    print("condition1: ",len(set(list(check_imgs_array)))!=len(check_imgs_array))
+    print("condition2: ",len(set(list(check_lbls_array)))!=len(check_lbls_array))
+
+    
 
 # FOLDS CREATED
 
@@ -120,7 +127,8 @@ if do_train:
         folds_labels_path=path_to_dataset+"/labels/folds/"
         # create the k fold iteration (here to avoid doing it every time)
         # # k fold 
-        for i in range(1, k+1):
+        for i in range(5, k+1):
+            create_empty_temp_dirs(path_to_dataset)
             for f in range(1, k+1):
                 if f == i:
                     print("copying val images from: ", folds_images_path + "/" + str(f) + "/ to /temp_val/")
@@ -156,7 +164,7 @@ if do_train:
                     )
                  
                     instruction=f"python ../segment/train.py --img 640 --batch 8 --epochs 300 --data {dataset_yaml} --weights yolov5{model_size}-seg.pt --patience 20 \
-                    --project {project_name} --name {run_name} --seed 42"
+                    --project {project_name} --name {run_name} --seed 42 --device 0"
 
                     # instruction="python ../segment/train.py --img 1024 --batch 8 --epochs 200 --data fish.yaml \
                     #     --weights yolov5n-seg.pt --patience 20  --project /mnt/c/Users/haddo/yolov5/projects/fish/test_sizes --name nano --seed=42"
