@@ -1,0 +1,14 @@
+path: /mnt/c/Users/haddo/DL_stack/yolov5/datasets/fish/binary/  # dataset root dir
+train: images/temp_train # train images (relative to 'path') 128 images
+val: images/temp_val  # val images (relative to 'path') 128 images
+test: images/test # test images (optional)
+
+nc: 1
+names: ['Fish']
+
+roboflow:
+  workspace: plome-antonio
+  project: plome-is
+  version: 10
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/plome-antonio/plome-is/dataset/10
