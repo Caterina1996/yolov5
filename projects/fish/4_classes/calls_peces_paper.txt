@@ -1,0 +1,15 @@
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\Uib\yolov5\data\fish_4_classes.yaml --weights yolov5m-seg.pt --patience 20                     --project C:\Users\Uib\yolov5\projects\fish\4_classes\medium --name C:\Users\Uib\yolov5\projects\fish\4_classes\medium\fold_1 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\Uib\yolov5\data\fish_4_classes.yaml --weights yolov5m-seg.pt --patience 20                     --project C:\Users\Uib\yolov5\projects\fish\4_classes\medium --name C:\Users\Uib\yolov5\projects\fish\4_classes\medium\fold_2 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\Uib\yolov5\data\fish_4_classes.yaml --weights yolov5m-seg.pt --patience 20                     --project C:\Users\Uib\yolov5\projects\fish\4_classes\medium --name C:\Users\Uib\yolov5\projects\fish\4_classes\medium\fold_3 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\Uib\yolov5\data\fish_4_classes.yaml --weights yolov5m-seg.pt --patience 20                     --project C:\Users\Uib\yolov5\projects\fish\4_classes\medium --name C:\Users\Uib\yolov5\projects\fish\4_classes\medium\fold_4 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\Uib\yolov5\data\fish_4_classes.yaml --weights yolov5m-seg.pt --patience 20                     --project C:\Users\Uib\yolov5\projects\fish\4_classes\medium --name C:\Users\Uib\yolov5\projects\fish\4_classes\medium\fold_5 --seed 42 --device 0
+------------------------------------------------------------- 
+

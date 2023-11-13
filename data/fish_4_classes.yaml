@@ -9,14 +9,13 @@
 
 # Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
 #path: C:\Users\tinti\yolov5\datasets\halimeda\  # dataset root dir
-path: C:\Users\Uib\yolov5\datasets\fish\PLOME_IS\  # dataset root dir
+path: C:\Users\Uib\yolov5\datasets\fish\4_classes\  # dataset root dir
 train: images\temp_train # train images (relative to 'path') 128 images
 val: images\temp_val  # val images (relative to 'path') 128 images
 test: images\test # test images (optional)
 
-# Classes
-nc: 16
-names: ['Chromis chromis', 'Coris julis', 'Dentex dentex', 'Diplodus annularis', 'Diplodus sargus', 'Diplodus vulgaris', 'Epinephelus marginatus', 'Lithognathus mormyrus', 'Mugilidae prob Chelon', 'Oblada melanura', 'Pomatous salator', 'Sciena umbra', 'Seriola dumerili', 'Serranus', 'Spicara maena', 'Spondyliosoma cantharus']
+nc: 4
+names: ['Chromis chromis', 'Diplodus sargus', 'Diplodus vulgaris', 'Serranus scriba']
 
 roboflow:
   workspace: plome-antonio
