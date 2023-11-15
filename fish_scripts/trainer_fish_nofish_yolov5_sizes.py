@@ -10,18 +10,18 @@ import random
 import time
 
 
-path_to_calls="/mnt/c/Users/haddo/DL_stack/yolov5/projects/fish/binary"
-path_to_project = "/mnt/c/Users/haddo/DL_stack/yolov5/projects/fish/binary"
-path_to_dataset = "/mnt/c/Users/haddo/DL_stack/yolov5/datasets/fish/binary/"
-dataset_yaml = "/mnt/c/Users/haddo/DL_stack/yolov5/data/fish_binary.yaml"
+# path_to_calls="/mnt/c/Users/haddo/DL_stack/yolov5/projects/fish/binary"
+# path_to_project = "/mnt/c/Users/haddo/DL_stack/yolov5/projects/fish/binary"
+# path_to_dataset = "/mnt/c/Users/haddo/DL_stack/yolov5/datasets/fish/binary/"
+# dataset_yaml = "/mnt/c/Users/haddo/DL_stack/yolov5/data/fish_binary.yaml"
+
+path_to_calls = r"C:\Users\Uib\yolov5\projects\fish\binary"
+path_to_project = r"C:\Users\Uib\yolov5\projects\fish\binary"
+path_to_dataset = r"C:\Users\Uib\yolov5\datasets\fish\binary"
+dataset_yaml = r"C:\Users\Uib\yolov5\data\fish_binary.yaml"
 
 if not os.path.exists(path_to_calls): 
     os.makedirs(path_to_calls)
-
-# path_to_calls = r"C:\Users\Uib\yolov5\projects\fish\binary"
-# path_to_project = r"C:\Users\Uib\yolov5\projects\fish\binary"
-# path_to_dataset = r"C:\Users\Uib\yolov5\datasets\fish\binary"
-# dataset_yaml = r"C:\Users\Uib\yolov5\data\fish_binary.yaml"
 
 txt_path = os.path.join(path_to_calls, 'calls_peces_paper.txt')
 
@@ -43,7 +43,7 @@ def create_empty_temp_dirs(base_path):
 
 ds_versions = [16]
 do_train = True
-folds_created = True
+folds_created = False
 k = 5
 seed=42
 check_imgs_array,check_lbls_array=[],[]

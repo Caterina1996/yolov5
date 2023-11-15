@@ -1,3 +1,0 @@
-python ../segment/train.py --img 640 --batch 8 --epochs 300 --data /mnt/c/Users/haddo/DL_stack/yolov5/data/fish_binary.yaml --weights yolov5n-seg.pt --patience 20                     --project /mnt/c/Users/haddo/DL_stack/yolov5/projects/fish/binary/nano --name /mnt/c/Users/haddo/DL_stack/yolov5/projects/fish/binary/nano/fold_1 --seed 42 --device 0
-------------------------------------------------------------- 
-
