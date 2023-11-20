@@ -1,3 +1,0 @@
-python ../train.py --img 1200 --batch 8 --epochs 200 --data C:\Users\Uib\yolov5\data\halimeda_xesc_y_test_git.yaml --weights C:\Users\Uib\yolov5\projects\halimeda\halimeda_xesc\github_model.pt --patience 20 --project C:\Users\Uib\yolov5\projects\halimeda\halimeda_xesc --name C:\Users\Uib\yolov5\projects\halimeda\halimeda_xesc\xesc_y_test_git_desde_best --seed 42 --device 0
-------------------------------------------------------------- 
-

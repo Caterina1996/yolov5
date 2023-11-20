@@ -1,3 +1,0 @@
-python ../train.py --img 1200 --batch 8 --epochs 200 --data C:\Users\Uib\yolov5\data\halimeda_xesc.yaml --weights yolov5x.pt --patience 20 --project C:\Users\Uib\yolov5\projects\halimeda\halimeda_xesc --name C:\Users\Uib\yolov5\projects\halimeda\halimeda_xesc\solo_xesc --seed 42 --device 0
-------------------------------------------------------------- 
-

@@ -8,7 +8,7 @@ import time
 
 
 
-k=5 #num folds
+k=2 #num folds
 input_imgs_path="/mnt/c/Users/haddo/yolov5/datasets/halimeda/NEW_DATASET/images/"
 input_labels_path="/mnt/c/Users/haddo/yolov5/datasets/halimeda/NEW_DATASET/labels/"
 folds_dir=""
@@ -59,7 +59,9 @@ eval_instruction_test="python /mnt/c/Users/haddo/DL_stack/Halimeda/scripts/eval_
 #check get_im path
 temporary_dirs=[temp_imgs_train,temp_imgs_val,temp_labels_train,temp_labels_val]
 
-model_sizes={"yolo_nano":"yolov5n.pt","yolo_small":"yolov5s.pt","yolo_medium":"yolov5m.pt","yolo_large":"yolov5l.pt"}
+# model_sizes={"yolo_small":"yolov5s.pt","yolo_medium":"yolov5m.pt","yolo_large":"yolov5l.pt","yolo_nano":"yolov5n.pt",}
+
+model_sizes={"yolo_XL":"yolov5x.pt"}
 
 
 def create_empty_temp_dirs():
@@ -86,7 +88,7 @@ train_files_list=[]
 create_dirs=True
 for model in model_sizes.keys():
     
-    for i in range(3,k+1):
+    for i in range(1,k+1):
         
         #1) K folds:
         #Copy all files to tmp train and tmp val
