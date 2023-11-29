@@ -10,15 +10,15 @@ import random
 import time
 
 
-# path_to_calls="/mnt/c/Users/haddo/DL_stack/yolov5/projects/fish/binary"
-# path_to_project = "/mnt/c/Users/haddo/DL_stack/yolov5/projects/fish/binary"
-# path_to_dataset = "/mnt/c/Users/haddo/DL_stack/yolov5/datasets/fish/binary/"
-# dataset_yaml = "/mnt/c/Users/haddo/DL_stack/yolov5/data/fish_binary.yaml"
+path_to_calls="/mnt/c/Users/haddo/DL_stack/yolov5/projects/fish/binary"
+path_to_project = "/mnt/c/Users/haddo/DL_stack/yolov5/projects/fish/binary"
+path_to_dataset = "/mnt/c/Users/haddo/DL_stack/yolov5/datasets/fish/binary/"
+dataset_yaml = "/mnt/c/Users/haddo/DL_stack/yolov5/data/fish_binary.yaml"
 
-path_to_calls = r"C:\Users\haddo\DL_stack\yolov5\projects\fish\binary"
-path_to_project = r"C:\Users\haddo\DL_stack\yolov5\projects\fish\binary"
-path_to_dataset = r"C:\Users\haddo\DL_stack\yolov5\datasets\fish\binary"
-dataset_yaml = r"C:\Users\haddo\DL_stack\yolov5\data\fish_binary.yaml"
+# path_to_calls = r"C:\Users\haddo\DL_stack\yolov5\projects\fish\binary"
+# path_to_project = r"C:\Users\haddo\DL_stack\yolov5\projects\fish\binary"
+# path_to_dataset = r"C:\Users\haddo\DL_stack\yolov5\datasets\fish\binary"
+# dataset_yaml = r"C:\Users\haddo\DL_stack\yolov5\data\fish_binary.yaml"
 
 if not os.path.exists(path_to_calls): 
     os.makedirs(path_to_calls)
