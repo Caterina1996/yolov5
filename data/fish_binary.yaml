@@ -1,4 +1,4 @@
-path: C:\Users\Uib\yolov5\datasets\fish\binary\ # dataset root dir
+path: C:\Users\haddo\DL_stack\yolov5\datasets\fish\binary # dataset root dir
 train: images/temp_train # train images (relative to 'path') 128 images
 val: images/temp_val  # val images (relative to 'path') 128 images
 test: images/test # test images (optional)
