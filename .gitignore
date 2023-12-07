@@ -42,7 +42,8 @@ data/*
 projects/halimeda/old/
 projects/halimeda/old/*
 *projects/halimeda/old/*
-
+*projects/fish/test_sizes/**
+*projects/fish/4_classes/**
 
 # Datasets -------------------------------------------------------------------------------------------------------------
 coco/

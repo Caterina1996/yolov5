@@ -1,0 +1,30 @@
+path: C:\Users\haddo\DL_stack\yolov5\datasets\fish\16_species\ # dataset root dir
+train: images/temp_train # train images (relative to 'path') 128 images
+val: images/temp_val  # val images (relative to 'path') 128 images
+test: images/test # test images (optional)
+
+names:
+- Chromis chromis
+- Coris julis
+- Dentex dentex
+- Diplodus annularis
+- Diplodus sargus
+- Diplodus vulgaris
+- Epinephelus marginatus
+- Lithognathus mormyrus
+- Mugilidae prob Chelon
+- Oblada melanura
+- Pomatous salator
+- Sciaena umbra
+- Seriola dumerili
+- Serranus
+- Spicara maena
+- Spondyliosoma cantharus
+nc: 16
+roboflow:
+  license: CC BY 4.0
+  project: plome-is
+  url: https://universe.roboflow.com/plome-antonio/plome-is/dataset/16
+  version: 16
+  workspace: plome-antonio
+

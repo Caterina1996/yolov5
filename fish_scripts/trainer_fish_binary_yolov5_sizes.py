@@ -10,15 +10,15 @@ import random
 import time
 
 
-path_to_calls="/mnt/c/Users/haddo/DL_stack/yolov5/projects/fish/binary"
-path_to_project = "/mnt/c/Users/haddo/DL_stack/yolov5/projects/fish/binary"
-path_to_dataset = "/mnt/c/Users/haddo/DL_stack/yolov5/datasets/fish/binary/"
-dataset_yaml = "/mnt/c/Users/haddo/DL_stack/yolov5/data/fish_binary.yaml"
+# path_to_calls="/mnt/c/Users/haddo/DL_stack/yolov5/projects/fish/binary"
+# path_to_project = "/mnt/c/Users/haddo/DL_stack/yolov5/projects/fish/binary"
+# path_to_dataset = "/mnt/c/Users/haddo/DL_stack/yolov5/datasets/fish/binary/"
+# dataset_yaml = "/mnt/c/Users/haddo/DL_stack/yolov5/data/fish_binary.yaml"
 
-# path_to_calls = r"C:\Users\haddo\DL_stack\yolov5\projects\fish\binary"
-# path_to_project = r"C:\Users\haddo\DL_stack\yolov5\projects\fish\binary"
-# path_to_dataset = r"C:\Users\haddo\DL_stack\yolov5\datasets\fish\binary"
-# dataset_yaml = r"C:\Users\haddo\DL_stack\yolov5\data\fish_binary.yaml"
+path_to_calls = r"C:\Users\haddo\DL_stack\yolov5\projects\fish\binary"
+path_to_project = r"C:\Users\haddo\DL_stack\yolov5\projects\fish\binary"
+path_to_dataset = r"C:\Users\haddo\DL_stack\yolov5\datasets\fish\binary"
+dataset_yaml = r"C:\Users\haddo\DL_stack\yolov5\data\fish_binary.yaml"
 
 if not os.path.exists(path_to_calls): 
     os.makedirs(path_to_calls)
@@ -139,6 +139,8 @@ if do_train:
                     print("copying val images from: ", folds_images_path + "/" + str(f) + "/ to /temp_val/")
                     print("copying val labels from: ", folds_labels_path + "/" + str(f) + "/ to /temp_val/")
                     for img, lbl in zip(glob.glob(os.path.join(folds_images_path, str(f), '*')), glob.glob(os.path.join(folds_labels_path, str(f), '*'))):
+                        # print(img)
+                        # print(os.path.join(path_to_dataset, 'images', 'temp_val', os.path.split(img)[-1]))
                         shutil.copyfile(img, os.path.join(path_to_dataset, 'images', 'temp_val', os.path.split(img)[-1]))
                         shutil.copyfile(lbl, os.path.join(path_to_dataset, 'labels', 'temp_val', os.path.split(lbl)[-1]))
                 else:
@@ -146,6 +148,8 @@ if do_train:
                     print("copying val labels from: ", folds_labels_path + "/" + str(f) + "/ to /temp_train/")
 
                     for img, lbl in zip(glob.glob(os.path.join(folds_images_path, str(f), '*')), glob.glob(os.path.join(folds_labels_path, str(f), '*'))):
+                        # print(img)
+                        # print(os.path.join(path_to_dataset, 'images', 'temp_train', os.path.split(img)[-1]))
                         shutil.copyfile(img, os.path.join(path_to_dataset, 'images', 'temp_train', os.path.split(img)[-1]))
                         shutil.copyfile(lbl, os.path.join(path_to_dataset, 'labels', 'temp_train', os.path.split(lbl)[-1]))
 

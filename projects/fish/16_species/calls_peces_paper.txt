@@ -1,0 +1,75 @@
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5n-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\nano --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\nano\fold_1 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5s-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\small --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\small\fold_1 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5m-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\medium --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\medium\fold_1 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5l-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\large --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\large\fold_1 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5x-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\extra_large --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\extra_large\fold_1 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5n-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\nano --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\nano\fold_2 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5s-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\small --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\small\fold_2 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5m-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\medium --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\medium\fold_2 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5l-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\large --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\large\fold_2 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5x-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\extra_large --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\extra_large\fold_2 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5n-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\nano --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\nano\fold_3 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5s-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\small --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\small\fold_3 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5m-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\medium --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\medium\fold_3 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5l-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\large --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\large\fold_3 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5x-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\extra_large --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\extra_large\fold_3 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5n-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\nano --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\nano\fold_4 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5s-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\small --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\small\fold_4 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5m-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\medium --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\medium\fold_4 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5l-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\large --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\large\fold_4 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5x-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\extra_large --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\extra_large\fold_4 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5n-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\nano --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\nano\fold_5 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5s-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\small --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\small\fold_5 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5m-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\medium --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\medium\fold_5 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5l-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\large --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\large\fold_5 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ../segment/train.py --img 640 --batch 8 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_16_species.yaml --weights yolov5x-seg.pt --patience 20                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\extra_large --name C:\Users\haddo\DL_stack\yolov5\projects\fish\16_species\extra_large\fold_5 --seed 42 --device 0
+------------------------------------------------------------- 
+
