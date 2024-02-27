@@ -342,6 +342,17 @@ def run(
     nt = np.bincount(stats[4].astype(int), minlength=nc)  # number of targets per class
 
     # Print results
+# --------------------------------------------------- CUSTOM ---------------------------------------------------
+    import json
+    metrics_keys = 'metrics/precision(B)', 'metrics/recall(B)', 'metrics/mAP50(B)', 'metrics/mAP50-95(B)', 'metrics/precision(M)', 'metrics/recall(M)', 'metrics/mAP50(M)', 'metrics/mAP50-95(M)'
+    metrics_data = metrics.mean_results()
+    metrics_dict = {}
+    for metrics_key, metrics_value in zip(metrics_keys, metrics_data):
+        metrics_dict[metrics_key] = metrics_value
+    with open(os.path.join(save_dir, "metrics_data.json"), 'w') as f:
+        json.dump(metrics_dict, f, indent=4)
+# ---------------------------------------------------------------------------------------------------------------
+        
     pf = '%22s' + '%11i' * 2 + '%11.3g' * 8  # print format
     LOGGER.info(pf % ('all', seen, nt.sum(), *metrics.mean_results()))
     if nt.sum() == 0:
