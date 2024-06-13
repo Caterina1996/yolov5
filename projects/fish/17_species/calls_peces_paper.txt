@@ -1,0 +1,30 @@
+python ./segment/train.py --img 1280 --batch 7 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_17_species.yaml --weights yolov5m-seg.pt --patience 100                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\17_species\medium --name C:\Users\haddo\DL_stack\yolov5\projects\fish\17_species\medium\fold_1 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ./segment/train.py --img 1280 --batch 7 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_17_species.yaml --weights yolov5l-seg.pt --patience 100                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\17_species\large --name C:\Users\haddo\DL_stack\yolov5\projects\fish\17_species\large\fold_1 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ./segment/train.py --img 1280 --batch 7 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_17_species.yaml --weights yolov5m-seg.pt --patience 100                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\17_species\medium --name C:\Users\haddo\DL_stack\yolov5\projects\fish\17_species\medium\fold_2 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ./segment/train.py --img 1280 --batch 7 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_17_species.yaml --weights yolov5l-seg.pt --patience 100                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\17_species\large --name C:\Users\haddo\DL_stack\yolov5\projects\fish\17_species\large\fold_2 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ./segment/train.py --img 1280 --batch 7 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_17_species.yaml --weights yolov5m-seg.pt --patience 100                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\17_species\medium --name C:\Users\haddo\DL_stack\yolov5\projects\fish\17_species\medium\fold_3 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ./segment/train.py --img 1280 --batch 7 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_17_species.yaml --weights yolov5l-seg.pt --patience 100                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\17_species\large --name C:\Users\haddo\DL_stack\yolov5\projects\fish\17_species\large\fold_3 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ./segment/train.py --img 1280 --batch 7 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_17_species.yaml --weights yolov5m-seg.pt --patience 100                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\17_species\medium --name C:\Users\haddo\DL_stack\yolov5\projects\fish\17_species\medium\fold_4 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ./segment/train.py --img 1280 --batch 7 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_17_species.yaml --weights yolov5l-seg.pt --patience 100                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\17_species\large --name C:\Users\haddo\DL_stack\yolov5\projects\fish\17_species\large\fold_4 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ./segment/train.py --img 1280 --batch 7 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_17_species.yaml --weights yolov5m-seg.pt --patience 100                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\17_species\medium --name C:\Users\haddo\DL_stack\yolov5\projects\fish\17_species\medium\fold_5 --seed 42 --device 0
+------------------------------------------------------------- 
+
+python ./segment/train.py --img 1280 --batch 7 --epochs 300 --data C:\Users\haddo\DL_stack\yolov5\data\fish_17_species.yaml --weights yolov5l-seg.pt --patience 100                     --project C:\Users\haddo\DL_stack\yolov5\projects\fish\17_species\large --name C:\Users\haddo\DL_stack\yolov5\projects\fish\17_species\large\fold_5 --seed 42 --device 0
+------------------------------------------------------------- 
+
